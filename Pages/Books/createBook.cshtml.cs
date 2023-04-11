@@ -7,6 +7,8 @@ namespace ASP.Net_application.Pages.Books
     public class createBookModel : PageModel
     {
         Books book = new Books();
+        public string errorMessage = "";
+        public string successMessage = "";
         public void OnGet()
         {
             
@@ -37,10 +39,12 @@ namespace ASP.Net_application.Pages.Books
                                 $"{book.bookEdition},{book.Price},'{book.rackNum}','{book.dateArrival}','{book.supplierId}')";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
+                successMessage = "Book added successfully";
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                errorMessage=ex.Message;
             }
             
 
