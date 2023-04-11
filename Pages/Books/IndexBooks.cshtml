@@ -1,0 +1,33 @@
+﻿@page
+@model ASP.Net_application.Pages.Books.IndexBooksModel
+@{
+
+}
+
+<br>
+<a class='btn-primary btn-sm' href="/Books/CreateBook">Create new book</a>
+<h1>Books List</h1>
+<table class="table">
+    <thead>
+           <tr>
+                <th>ID</th>
+                <th>BOOK TITLE</th>
+                <th>AUTHOR</th>
+                <th>PRICE</th>
+                <th>PUBLICATION</th>
+           </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model.booksList)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.BookTitle</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+                <td>@book.Publication</td>               
+            </tr>
+
+        }
+    </tbody>
+</table>
