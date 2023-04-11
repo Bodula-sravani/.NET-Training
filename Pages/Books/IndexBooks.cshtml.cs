@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
 
 namespace ASP.Net_application.Pages.Books
 {
@@ -47,9 +48,15 @@ namespace ASP.Net_application.Pages.Books
     public class Books
     {
         public string Id { get; set; }
-        public string BookTitle { get; set; }   
+        public string BookTitle { get; set; }
+        public string category { get; set; }
         public string Author { get; set; }
+        public string Publication { get; set; }
+        public DateTime publishDate { get; set; }
+        public int bookEdition { get; set; }
         public double Price { get; set; }
-        public string Publication { get; set; } 
+        public string rackNum { get; set; }
+        public DateTime dateArrival { get; set; }
+        public  string supplierId { get; set; }
     }
 }
