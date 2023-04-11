@@ -25,7 +25,14 @@
                 <td>@book.BookTitle</td>
                 <td>@book.Author</td>
                 <td>@book.Price</td>
-                <td>@book.Publication</td>               
+                <td>@book.Publication</td>   
+                <td>
+                    <a class="btn-primary" href ="/Books/UpdateBook?Id=@book.Id">Edit</a>
+                </td>
+                <td>
+                    <a class="alert-danger" href="/Books/DeleteBook">Delete</a>
+                </td>
+
             </tr>
 
         }

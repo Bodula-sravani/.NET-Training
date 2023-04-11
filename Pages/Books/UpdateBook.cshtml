@@ -1,0 +1,71 @@
+﻿@page
+@model ASP.Net_application.Pages.Books.UpdateBookModel
+@{
+}
+<p>Update book</p>
+@if (Model.message.Length > 0)
+{
+    <div id="error">
+        <br> <div class="alert-warning alert-dismissible">@Model.message</div><br />
+        <button type="button" class="btn-close" data-dismiss="alert"
+                onClick="
+            const element = document.getElementById('error');
+            element.remove();
+            "></button>
+    </div>
+}
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.book.Id"/>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Title</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="Title" value="@Model.book.BookTitle" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Category</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="Category" value="@Model.book.category" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Author</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="Author" value="@Model.book.Author" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Publication</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="Publication" value="@Model.book.Publication" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Publish Date</label>
+        <div class="col-sm-4">
+            <input type="date" class="form-control" name="Publish Date" value="@Model.book.publishDate.ToString("yyyy-MM-dd")" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Edition</label>
+        <div class="col-sm-4">
+            <input type="number" class="form-control" name="Book Edition" value="@Model.book.bookEdition" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Price</label>
+        <div class="col-sm-4">
+            <input type="number" class="form-control" name="Price" value="@Model.book.Price" required min="100" max="1000" />
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn-primary">Submit</button>
+    </div>
+</form>
