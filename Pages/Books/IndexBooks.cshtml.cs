@@ -24,6 +24,7 @@ namespace ASP.Net_application.Pages.Books
 
                 while(reader.Read())
                 { 
+
                     Books book = new Books();
 
                     book.Id = reader.GetString(0);
