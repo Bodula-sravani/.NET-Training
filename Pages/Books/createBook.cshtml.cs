@@ -28,6 +28,12 @@ namespace ASP.Net_application.Pages.Books
             book.publishDate = Convert.ToDateTime(Request.Form["Publish Date"]);
             book.bookEdition = Convert.ToInt32(Request.Form["Book Edition"]);
             book.Price = Convert.ToDouble(Request.Form["Price"]);
+
+            if(book.Price>1000)
+            {
+                errorMessage = "The Book price cannot be more than 1000";
+                return;
+            }
             book.rackNum = "A2";
             book.dateArrival = DateTime.Now;
             book.supplierId = "S01";
