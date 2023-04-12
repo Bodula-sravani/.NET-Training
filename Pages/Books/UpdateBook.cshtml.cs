@@ -9,7 +9,7 @@ namespace ASP.Net_application.Pages.Books
     public class UpdateBookModel : PageModel
     {
        public Books book = new Books();
-        public string message = "";
+       public string message = "";
        
         public void OnGet()
         {
